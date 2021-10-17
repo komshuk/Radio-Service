@@ -43,5 +43,3 @@ out/
 ### Exclusions ###
 !gradle/wrapper/gradle-wrapper.jar
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**
-!**/src/test/**
