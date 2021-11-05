@@ -3,17 +3,17 @@ package ru.netology.Radioman;
 public class Radio {
 
     private int currentStation;
-    private int currentVolume;
+    private int currentSoundVolume;
 
     public int getCurrentStation() {
         return currentStation;
     }
 
-    public int getSoundVolume() {
-        return currentVolume;
+    public int getCurrentSoundVolume() {
+        return currentSoundVolume;
     }
 
-    public void setValidCurrentStation(int currentStation) {
+    public void setCurrentStation(int currentStation) {
         if (currentStation < 0) {
             return;
         }
@@ -23,70 +23,43 @@ public class Radio {
         this.currentStation = currentStation;
     }
 
-    public void setValidCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 0) {
+    public void setCurrentSoundVolume(int currentSoundVolume) {
+        if (currentSoundVolume < 0) {
             return;
         }
-        if (newCurrentVolume > getMaxVolume()) {
+        if (currentSoundVolume > getMaxVolume()) {
             return;
         }
-        if (newCurrentVolume > 0) {
-            currentVolume = newCurrentVolume;
-        }
-        if (newCurrentVolume < getMaxVolume()) {
-            currentVolume = newCurrentVolume;
-        }
+        this.currentSoundVolume = currentSoundVolume;
     }
 
-    public void setCurrentStationMax(int newCurrentStation) {
-        currentStation = newCurrentStation;
-        if (newCurrentStation < getMaxStation()) {
-            currentStation = newCurrentStation + 1;
+    public void nextStation() {
+        if (currentStation <= getMaxStation()) {
+            currentStation = currentStation + 1;
         }
-        if (newCurrentStation >= getMaxStation()) {
-            currentStation = 0;
-        }
-        if (newCurrentStation < 0) {
+        if (currentStation > getMaxStation()) {
             currentStation = 0;
         }
     }
 
-    public void setSoundVolumeAdd(int newCurrentVolume) {
-        currentVolume = newCurrentVolume;
-        if (currentVolume < getMaxVolume()) {
-            currentVolume = currentVolume + 1;
+    public void prevStation() {
+        if (currentStation >= 0) {
+            currentStation = currentStation - 1;
         }
-        if (newCurrentVolume > getMaxVolume()) {
-            currentVolume = getMaxVolume();
-        }
-        if (newCurrentVolume < 0) {
-            currentVolume = 0;
-        }
-    }
-
-    public void setCurrentStationMin(int newCurrentStation) {
-        currentStation = newCurrentStation;
-        if (newCurrentStation > 0) {
-            currentStation = newCurrentStation - 1;
-        }
-        if (newCurrentStation <= 0) {
+        if (currentStation < 0) {
             currentStation = getMaxStation();
         }
-        if (newCurrentStation > getMaxStation()) {
-            currentStation = 0;
+    }
+
+    public void increaseVolume() {
+        if (currentSoundVolume < getMaxVolume()) {
+            currentSoundVolume = currentSoundVolume + 1;
         }
     }
 
-    public void setSoundVolumeReduce(int newCurrentVolume) {
-        currentVolume = newCurrentVolume;
-        if (currentVolume > 0) {
-            currentVolume = currentVolume - 1;
-        }
-        if (newCurrentVolume > getMaxVolume()) {
-            currentVolume = 0;
-        }
-        if (newCurrentVolume < 0) {
-            currentVolume = 0;
+    public void reduceVolume() {
+        if (currentSoundVolume > 0) {
+            currentSoundVolume = currentSoundVolume - 1;
         }
     }
 

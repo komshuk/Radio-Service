@@ -30,7 +30,7 @@ class RadioTest {
     void currentNumberStation() {
         Radio road = new Radio();
 
-        road.setValidCurrentStation(4);
+        road.setCurrentStation(4);
 
         int actual = road.getCurrentStation();
         int expected = 4;
@@ -39,10 +39,10 @@ class RadioTest {
     }
 
     @Test
-    void currentNegativeMin() {
+    void maxPositiveNumberStation() {
         Radio road = new Radio();
 
-        road.setValidCurrentStation(-1161616156);
+        road.setCurrentStation(999999999);
 
         int actual = road.getCurrentStation();
         int expected = 0;
@@ -51,10 +51,10 @@ class RadioTest {
     }
 
     @Test
-    void currentNegativeNumberMin() {
+    void maxNegativeNumberStation() {
         Radio road = new Radio();
 
-        road.setValidCurrentStation(-1);
+        road.setCurrentStation(-999999999);
 
         int actual = road.getCurrentStation();
         int expected = 0;
@@ -63,10 +63,10 @@ class RadioTest {
     }
 
     @Test
-    void currentNumberStationMin() {
+    void positiveNumberStation() {
         Radio road = new Radio();
 
-        road.setValidCurrentStation(0);
+        road.setCurrentStation(10);
 
         int actual = road.getCurrentStation();
         int expected = 0;
@@ -75,46 +75,10 @@ class RadioTest {
     }
 
     @Test
-    void currentNumberMin() {
+    void positiveStation() {
         Radio road = new Radio();
 
-        road.setValidCurrentStation(1);
-
-        int actual = road.getCurrentStation();
-        int expected = 1;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void currentNegativeMax() {
-        Radio road = new Radio();
-
-        road.setValidCurrentStation(1031561651);
-
-        int actual = road.getCurrentStation();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void currentNegativeNumberMax() {
-        Radio road = new Radio();
-
-        road.setValidCurrentStation(10);
-
-        int actual = road.getCurrentStation();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void currentNumberStationMax() {
-        Radio road = new Radio();
-
-        road.setValidCurrentStation(9);
+        road.setCurrentStation(9);
 
         int actual = road.getCurrentStation();
         int expected = 9;
@@ -123,13 +87,49 @@ class RadioTest {
     }
 
     @Test
-    void currentNumberMax() {
+    void positiveNumber() {
         Radio road = new Radio();
 
-        road.setValidCurrentStation(8);
+        road.setCurrentStation(8);
 
         int actual = road.getCurrentStation();
         int expected = 8;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void minPositiveNumber() {
+        Radio road = new Radio();
+
+        road.setCurrentStation(1);
+
+        int actual = road.getCurrentStation();
+        int expected = 1;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void minPositiveStation() {
+        Radio road = new Radio();
+
+        road.setCurrentStation(0);
+
+        int actual = road.getCurrentStation();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void minNegativeNumberStation() {
+        Radio road = new Radio();
+
+        road.setCurrentStation(-1);
+
+        int actual = road.getCurrentStation();
+        int expected = 0;
 
         assertEquals(expected, actual);
     }
@@ -138,106 +138,106 @@ class RadioTest {
     void currentSoundVolume() {
         Radio road = new Radio();
 
-        road.setValidCurrentVolume(5);
+        road.setCurrentSoundVolume(5);
 
-        int actual = road.getSoundVolume();
+        int actual = road.getCurrentSoundVolume();
         int expected = 5;
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void currentNegativeVolume() {
+    void maxPositiveSoundVolume() {
         Radio road = new Radio();
 
-        road.setValidCurrentVolume(-1649849849);
+        road.setCurrentSoundVolume(999999999);
 
-        int actual = road.getSoundVolume();
+        int actual = road.getCurrentSoundVolume();
         int expected = 0;
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void currentNegativeVolumeMin() {
+    void maxNegativeSoundVolume() {
         Radio road = new Radio();
 
-        road.setValidCurrentVolume(-1);
+        road.setCurrentSoundVolume(-999999999);
 
-        int actual = road.getSoundVolume();
+        int actual = road.getCurrentSoundVolume();
         int expected = 0;
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void currentSoundVolumeMin() {
+    void positiveSoundVolume() {
         Radio road = new Radio();
 
-        road.setValidCurrentVolume(0);
+        road.setCurrentSoundVolume(11);
 
-        int actual = road.getSoundVolume();
+        int actual = road.getCurrentSoundVolume();
         int expected = 0;
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void currentVolumeMin() {
+    void positiveVolume() {
         Radio road = new Radio();
 
-        road.setValidCurrentVolume(1);
+        road.setCurrentSoundVolume(10);
 
-        int actual = road.getSoundVolume();
-        int expected = 1;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void currentNegativeMaxi() {
-        Radio road = new Radio();
-
-        road.setValidCurrentVolume(1198161619);
-
-        int actual = road.getSoundVolume();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void currentNegativeVolumeMax() {
-        Radio road = new Radio();
-
-        road.setValidCurrentVolume(11);
-
-        int actual = road.getSoundVolume();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void currentSoundVolumeMax() {
-        Radio road = new Radio();
-
-        road.setValidCurrentVolume(10);
-
-        int actual = road.getSoundVolume();
+        int actual = road.getCurrentSoundVolume();
         int expected = 10;
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void currentVolumeMax() {
+    void positiveVolumeSound() {
         Radio road = new Radio();
 
-        road.setValidCurrentVolume(9);
+        road.setCurrentSoundVolume(9);
 
-        int actual = road.getSoundVolume();
+        int actual = road.getCurrentSoundVolume();
         int expected = 9;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void minPositiveSoundVolume() {
+        Radio road = new Radio();
+
+        road.setCurrentSoundVolume(1);
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 1;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void minPositiveVolume() {
+        Radio road = new Radio();
+
+        road.setCurrentSoundVolume(0);
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void minNegativeSoundVolume() {
+        Radio road = new Radio();
+
+        road.setCurrentSoundVolume(-1);
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 0;
 
         assertEquals(expected, actual);
     }
@@ -245,8 +245,9 @@ class RadioTest {
     @Test
     void nextNumberStation() {
         Radio road = new Radio();
+        road.setCurrentStation(4);
 
-        road.setCurrentStationMax(4);
+        road.nextStation();
 
         int actual = road.getCurrentStation();
         int expected = 5;
@@ -255,46 +256,37 @@ class RadioTest {
     }
 
     @Test
-    void nextNumberNegativeMax() {
+    void nextNegativeNumberStation() {
         Radio road = new Radio();
+        road.setCurrentStation(999999999);
 
-        road.setCurrentStationMax(1098798798);
+        road.nextStation();
 
         int actual = road.getCurrentStation();
-        int expected = 0;
+        int expected = 1;
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void nextNumberNegativeStationMax() {
+    void nextNegativeStation() {
         Radio road = new Radio();
+        road.setCurrentStation(10);
 
-        road.setCurrentStationMax(10);
+        road.nextStation();
 
         int actual = road.getCurrentStation();
-        int expected = 0;
+        int expected = 1;
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void nextNumberStationMax() {
+    void nextValidNumberStation() {
         Radio road = new Radio();
+        road.setCurrentStation(8);
 
-        road.setCurrentStationMax(9);
-
-        int actual = road.getCurrentStation();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void nextStationMax() {
-        Radio road = new Radio();
-
-        road.setCurrentStationMax(8);
+        road.nextStation();
 
         int actual = road.getCurrentStation();
         int expected = 9;
@@ -303,10 +295,11 @@ class RadioTest {
     }
 
     @Test
-    void nextNumberNegativeStationMin() {
+    void nextValidStation() {
         Radio road = new Radio();
+        road.setCurrentStation(9);
 
-        road.setCurrentStationMax(-654161651);
+        road.nextStation();
 
         int actual = road.getCurrentStation();
         int expected = 0;
@@ -315,22 +308,11 @@ class RadioTest {
     }
 
     @Test
-    void nextNumberStationMin() {
+    void nextMinNegativeNumberStation() {
         Radio road = new Radio();
+        road.setCurrentStation(-999999999);
 
-        road.setCurrentStationMax(-1);
-
-        int actual = road.getCurrentStation();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void nextStationMin() {
-        Radio road = new Radio();
-
-        road.setCurrentStationMax(0);
+        road.nextStation();
 
         int actual = road.getCurrentStation();
         int expected = 1;
@@ -339,10 +321,37 @@ class RadioTest {
     }
 
     @Test
-    void nextStationNumberMin() {
+    void nextMinNumberStation() {
         Radio road = new Radio();
+        road.setCurrentStation(-1);
 
-        road.setCurrentStationMax(1);
+        road.nextStation();
+
+        int actual = road.getCurrentStation();
+        int expected = 1;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void nextNegativeNumbersStation() {
+        Radio road = new Radio();
+        road.setCurrentStation(0);
+
+        road.nextStation();
+
+        int actual = road.getCurrentStation();
+        int expected = 1;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void minNextNumbersStation() {
+        Radio road = new Radio();
+        road.setCurrentStation(1);
+
+        road.nextStation();
 
         int actual = road.getCurrentStation();
         int expected = 2;
@@ -351,118 +360,11 @@ class RadioTest {
     }
 
     @Test
-    void addVolume() {
+    void minNextValidStation() {
         Radio road = new Radio();
+        road.setCurrentStation(2);
 
-        road.setSoundVolumeAdd(5);
-
-        int actual = road.getSoundVolume();
-        int expected = 6;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void addNegativeMaxi() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeAdd(941616519);
-
-        int actual = road.getSoundVolume();
-        int expected = 10;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void addNegativeVolumeMaxi() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeAdd(11);
-
-        int actual = road.getSoundVolume();
-        int expected = 10;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void addVolumeMax() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeAdd(10);
-
-        int actual = road.getSoundVolume();
-        int expected = 10;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void addSoundVolumeMax() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeAdd(9);
-
-        int actual = road.getSoundVolume();
-        int expected = 10;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void addNegativeMin() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeAdd(-941616519);
-
-        int actual = road.getSoundVolume();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void addNegativeVolumeMin() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeAdd(-1);
-
-        int actual = road.getSoundVolume();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void addVolumeMin() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeAdd(0);
-
-        int actual = road.getSoundVolume();
-        int expected = 1;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void addSoundVolumeMin() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeAdd(1);
-
-        int actual = road.getSoundVolume();
-        int expected = 2;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void prevNumberStation() {
-        Radio road = new Radio();
-
-        road.setCurrentStationMin(4);
+        road.nextStation();
 
         int actual = road.getCurrentStation();
         int expected = 3;
@@ -471,10 +373,24 @@ class RadioTest {
     }
 
     @Test
-    void prevNumberNegativeStationMin() {
+    void prevNumberStation() {
         Radio road = new Radio();
+        road.setCurrentStation(5);
 
-        road.setCurrentStationMin(-984949494);
+        road.prevStation();
+
+        int actual = road.getCurrentStation();
+        int expected = 4;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void prevNegativeNumberStation() {
+        Radio road = new Radio();
+        road.setCurrentStation(999999999);
+
+        road.prevStation();
 
         int actual = road.getCurrentStation();
         int expected = 9;
@@ -483,10 +399,11 @@ class RadioTest {
     }
 
     @Test
-    void prevNegativeNumberStationMin() {
+    void prevNegativeStation() {
         Radio road = new Radio();
+        road.setCurrentStation(10);
 
-        road.setCurrentStationMin(-1);
+        road.prevStation();
 
         int actual = road.getCurrentStation();
         int expected = 9;
@@ -495,70 +412,11 @@ class RadioTest {
     }
 
     @Test
-    void prevNumberStationMin() {
+    void prevValidNumberStation() {
         Radio road = new Radio();
+        road.setCurrentStation(8);
 
-        road.setCurrentStationMin(0);
-
-        int actual = road.getCurrentStation();
-        int expected = 9;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void prevNumberMin() {
-        Radio road = new Radio();
-
-        road.setCurrentStationMin(1);
-
-        int actual = road.getCurrentStation();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void prevNumberNegativeStationMax() {
-        Radio road = new Radio();
-
-        road.setCurrentStationMin(984949494);
-
-        int actual = road.getCurrentStation();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void prevNegativeNumberStationMax() {
-        Radio road = new Radio();
-
-        road.setCurrentStationMin(10);
-
-        int actual = road.getCurrentStation();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void prevNumberStationMax() {
-        Radio road = new Radio();
-
-        road.setCurrentStationMin(9);
-
-        int actual = road.getCurrentStation();
-        int expected = 8;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void prevNumberMax() {
-        Radio road = new Radio();
-
-        road.setCurrentStationMin(8);
+        road.prevStation();
 
         int actual = road.getCurrentStation();
         int expected = 7;
@@ -567,109 +425,352 @@ class RadioTest {
     }
 
     @Test
-    void reduceVolume() {
+    void prevValidStation() {
         Radio road = new Radio();
+        road.setCurrentStation(9);
 
-        road.setSoundVolumeReduce(5);
+        road.prevStation();
 
-        int actual = road.getSoundVolume();
-        int expected = 4;
+        int actual = road.getCurrentStation();
+        int expected = 8;
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void reduceNegativeVolumeMin() {
+    void prevMinNegativeNumberStation() {
         Radio road = new Radio();
+        road.setCurrentStation(-999999999);
 
-        road.setSoundVolumeReduce(-984984616);
+        road.prevStation();
 
-        int actual = road.getSoundVolume();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void reduceVolumeNegativeMin() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeReduce(-1);
-
-        int actual = road.getSoundVolume();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void reduceVolumeMin() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeReduce(0);
-
-        int actual = road.getSoundVolume();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void reduceSoundVolumeMin() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeReduce(1);
-
-        int actual = road.getSoundVolume();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void reduceNegativeVolumeMax() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeReduce(984984616);
-
-        int actual = road.getSoundVolume();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void reduceVolumeNegativeMax() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeReduce(11);
-
-        int actual = road.getSoundVolume();
-        int expected = 0;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void reduceVolumeMax() {
-        Radio road = new Radio();
-
-        road.setSoundVolumeReduce(10);
-
-        int actual = road.getSoundVolume();
+        int actual = road.getCurrentStation();
         int expected = 9;
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void reduceSoundVolumeMax() {
+    void prevMinNumberStation() {
         Radio road = new Radio();
+        road.setCurrentStation(-1);
 
-        road.setSoundVolumeReduce(9);
+        road.prevStation();
 
-        int actual = road.getSoundVolume();
+        int actual = road.getCurrentStation();
+        int expected = 9;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void prevNegativeNumbersStation() {
+        Radio road = new Radio();
+        road.setCurrentStation(0);
+
+        road.prevStation();
+
+        int actual = road.getCurrentStation();
+        int expected = 9;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void prevNextNumbersStation() {
+        Radio road = new Radio();
+        road.setCurrentStation(1);
+
+        road.prevStation();
+
+        int actual = road.getCurrentStation();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void increaseSoundVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(5);
+
+        road.increaseVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 6;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void increaseValidSoundVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(8);
+
+        road.increaseVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 9;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void increaseValidVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(9);
+
+        road.increaseVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 10;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void increaseSoundVolumeStop() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(10);
+
+        road.increaseVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 10;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void increaseNegativeSoundVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(11);
+
+        road.increaseVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 1;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void increaseMaxSoundVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(999999999);
+
+        road.increaseVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 1;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void increaseMinSoundVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(-999999999);
+
+        road.increaseVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 1;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void increaseNegativeVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(-1);
+
+        road.increaseVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 1;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void increaseMinValidSoundVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(0);
+
+        road.increaseVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 1;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void increaseValidVolumeSound() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(1);
+
+        road.increaseVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 2;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void increaseSoundVolumeValid() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(2);
+
+        road.increaseVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 3;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void reduceSoundVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(5);
+
+        road.reduceVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 4;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void reduceValidSoundVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(8);
+
+        road.reduceVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 7;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void reduceValidVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(9);
+
+        road.reduceVolume();
+
+        int actual = road.getCurrentSoundVolume();
         int expected = 8;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void reduceSoundVolumeStop() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(10);
+
+        road.reduceVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 9;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void reduceNegativeSoundVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(11);
+
+        road.reduceVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void reduceMaxSoundVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(999999999);
+
+        road.reduceVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void reduceMinSoundVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(-999999999);
+
+        road.reduceVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void reduceNegativeVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(-1);
+
+        road.reduceVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void reduceMinValidSoundVolume() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(0);
+
+        road.reduceVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void reduceValidVolumeSound() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(1);
+
+        road.reduceVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 0;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void reduceSoundVolumeValid() {
+        Radio road = new Radio();
+        road.setCurrentSoundVolume(2);
+
+        road.reduceVolume();
+
+        int actual = road.getCurrentSoundVolume();
+        int expected = 1;
 
         assertEquals(expected, actual);
     }
